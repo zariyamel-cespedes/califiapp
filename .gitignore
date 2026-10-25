@@ -1,0 +1,13 @@
+# .gitignore - Archivos que Git NO debe guardar en el historial
+
+# Copias que Python genera solo al ejecutar el programa
+__pycache__/
+*.pyc
+
+# Configuración personal de los editores
+.vscode/
+.idea/
+
+# Archivos basura que crea Windows
+Thumbs.db
+desktop.ini
