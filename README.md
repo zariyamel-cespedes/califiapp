@@ -13,7 +13,7 @@ CBTIS No. 200 · Programación · 3AM PGR · Docente: Mtro. Omar Torres Sánchez
 | Scrum Master | (Zariffe Yamel Céspedes Pelayo) |
 | Equipo de desarrollo | (Larissa Guadalupe Hernández Vega) |
 
-Tablero del proyecto: (pega aquí la liga de tu tablero de GitHub Projects)
+Tablero del proyecto: Pendiente
 
 ## Historias de usuario terminadas
 
