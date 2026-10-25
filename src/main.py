@@ -88,6 +88,7 @@ def opcion_reporte():
             print(fila_reporte(nombre, promedio))
     print("-" * 50)
     print("Promedio grupal:", promedio_grupal(promedios))
+    print("Total de alumnos en el reporte:", len(promedios))
 
 
 # ==============================================================
