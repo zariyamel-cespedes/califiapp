@@ -9,9 +9,9 @@ CBTIS No. 200 · Programación · 3AM PGR · Docente: Mtro. Omar Torres Sánchez
 
 | Rol | Integrante |
 |-----|------------|
-| Product Owner | (nombre) |
-| Scrum Master | (nombre) |
-| Equipo de desarrollo | (nombre) |
+| Product Owner | (Sally Natalie López Granados) |
+| Scrum Master | (Zariffe Yamel Céspedes Pelayo) |
+| Equipo de desarrollo | (Larissa Guadalupe Hernández Vega) |
 
 Tablero del proyecto: (pega aquí la liga de tu tablero de GitHub Projects)
 
