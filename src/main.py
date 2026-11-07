@@ -14,7 +14,8 @@
 #  El menú principal, main(), llama a cada una según la opción.
 # ==============================================================
 
-from calificaciones import (LIMITE_ALUMNOS, registrar_alumno, validar_calificacion,
+from calificaciones import (LIMITE_ALUMNOS, registrar_alumno, nombre_repetido,
+                            validar_calificacion,
                             calcular_promedio, obtener_estatus, fila_reporte,
                             promedio_grupal)
 
@@ -33,7 +34,9 @@ def opcion_registrar():
         nombre = input("Nombre del alumno: ")
         if nombre.strip() == "":
             break
-        if registrar_alumno(alumnos, nombre):
+        if nombre_repetido(alumnos, nombre):
+            print("Ese alumno ya está registrado. Escribe otro nombre.")
+        elif registrar_alumno(alumnos, nombre):
             print("  Registrado. Total:", len(alumnos), "de", LIMITE_ALUMNOS)
         else:
             print("  No se pudo registrar: el grupo ya tiene", LIMITE_ALUMNOS, "alumnos.")
