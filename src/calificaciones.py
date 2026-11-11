@@ -54,3 +54,12 @@ def promedio_grupal(promedios):
     if len(promedios) == 0:
         return 0.0
     return round(sum(promedios) / len(promedios), 1)
+
+
+# HU-05 Ver la lista del grupo
+def lista_ordenada(alumnos):
+    return sorted(alumnos, key=str.lower)
+
+
+def linea_lista(numero, nombre):
+    return str(numero) + ". " + nombre

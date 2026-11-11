@@ -74,5 +74,20 @@ class HU04ReporteDelGrupo(unittest.TestCase):
         self.assertEqual(promedio_grupal([]), 0.0)
 
 
+class HU05ListaDelGrupo(unittest.TestCase):
+    
+    def test_lista_en_orden_alfabetico(self):
+        alumnos = ["Luis Pérez", "ana López", "Carla Ruiz"]
+        self.assertEqual(lista_ordenada(alumnos), ["ana López", "Carla Ruiz", "Luis Pérez"])
+        
+    def test_lista_original_no_cambia(self):
+        alumnos = ["Luis Pérez", "Ana López"]
+        lista_ordenada(alumnos)
+        self.assertEqual(alumnos, ["Luis Pérez", "Ana López"])
+        
+    def test_linea_de_la_lista(self):
+        self.assertEqual(linea_lista(1, "Ana López"), "1. Ana López")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
