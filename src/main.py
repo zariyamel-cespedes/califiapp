@@ -17,7 +17,7 @@
 from calificaciones import (LIMITE_ALUMNOS, registrar_alumno, nombre_repetido,
                             validar_calificacion,
                             calcular_promedio, obtener_estatus, fila_reporte,
-                            promedio_grupal)
+                            promedio_grupal, lista_ordenada, linea_lista)
 
 NOMBRE_APP = "CalifiApp"
 OBJETIVO = "Registrar y consultar las calificaciones de un grupo desde la consola"
@@ -99,6 +99,21 @@ def opcion_reporte():
     print("Total de alumnos en el reporte:", len(promedios))
 
 
+# HU-05 Ver la lista del grupo
+def opcion_lista():
+    if len(alumnos) == 0:
+        print("\nAún no hay alumnos registrados (opción 1).")
+        return
+    print("\nLISTA DEL GRUPO (orden alfabético)")
+    print("-" * 50)
+    numero = 1
+    for nombre in lista_ordenada(alumnos):
+        print(linea_lista(numero, nombre))
+        numero = numero + 1
+    print("-" * 50)
+    print("Total:", len(alumnos), "de", LIMITE_ALUMNOS, "alumnos")
+
+
 # ==============================================================
 #  Menú principal
 # ==============================================================
@@ -113,6 +128,7 @@ def main():
         print("  2. Capturar calificaciones       (HU-02)")
         print("  3. Calcular promedio y estatus   (HU-03)")
         print("  4. Mostrar reporte del grupo     (HU-04)")
+        print("  5. Ver lista del grupo           (HU-05)")
         print("  0. Salir")
         print("-" * 50)
 
@@ -126,10 +142,12 @@ def main():
             opcion_promedios()
         elif opcion == "4":
             opcion_reporte()
+        elif opcion == "5":
+            opcion_lista()
         elif opcion == "0":
             print("Gracias por usar " + NOMBRE_APP + ". ¡Hasta pronto!")
         else:
-            print("\nOpción no válida. Escribe un número del 0 al 4.")
+            print("\nOpción no válida. Escribe un número del 0 al 5.")
 
         if opcion != "0":
             input("\nPresiona ENTER para volver al menú...")
