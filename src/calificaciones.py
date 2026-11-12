@@ -52,17 +52,13 @@ def promedio_grupal(promedios):
     return round(sum(promedios) / len(promedios), 1)
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 468e3b0 (HU-05: lista_ordenada y linea_lista (con 3 pruebas))
 # HU-05 Ver la lista del grupo
 def lista_ordenada(alumnos):
     return sorted(alumnos, key=str.lower)
 
 
 def linea_lista(numero, nombre):
-<<<<<<< HEAD
     return str(numero) + ". " + nombre
 
 
@@ -73,6 +69,5 @@ def buscar_alumno(alumnos, nombre):
         if registrado.lower() == nombre:
             return registrado
     return None
-=======
+
     return str(numero) + ". " + nombre
->>>>>>> 468e3b0 (HU-05: lista_ordenada y linea_lista (con 3 pruebas))

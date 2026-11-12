@@ -17,12 +17,10 @@
 from calificaciones import (LIMITE_ALUMNOS, registrar_alumno, nombre_repetido,
                             validar_calificacion,
                             calcular_promedio, obtener_estatus, fila_reporte,
-<<<<<<< HEAD
+
                             promedio_grupal, lista_ordenada, linea_lista,
                             buscar_alumno)
-=======
-                            promedio_grupal, lista_ordenada, linea_lista)
->>>>>>> 82b9182 (HU-05: opción 5 del menú muestra la lista ordenada)
+
 
 NOMBRE_APP = "CalifiApp"
 OBJETIVO = "Registrar y consultar las calificaciones de un grupo desde la consola"
@@ -104,11 +102,6 @@ def opcion_reporte():
     print("Total de alumnos en el reporte:", len(promedios))
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 82b9182 (HU-05: opción 5 del menú muestra la lista ordenada)
 # HU-05 Ver la lista del grupo
 def opcion_lista():
     if len(alumnos) == 0:
@@ -148,8 +141,6 @@ def opcion_consultar():
     print(" Promedio:", promedio, obtener_estatus(promedio))
 
 
-=======
->>>>>>> 82b9182 (HU-05: opción 5 del menú muestra la lista ordenada)
 # ==============================================================
 #  Menú principal
 # ==============================================================
