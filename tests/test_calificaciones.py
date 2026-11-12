@@ -5,6 +5,8 @@ import os
 import sys
 import unittest
 
+from src.calificaciones import calcular_promedio, fila_reporte, linea_lista, lista_ordenada, obtener_estatus, promedio_grupal, registrar_alumno, validar_calificacion, buscar_alumno
+
 # Permite importar src/calificaciones.py aunque las pruebas vivan en tests/
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 
@@ -75,28 +77,27 @@ class HU04ReporteDelGrupo(unittest.TestCase):
 
 
 class HU05ListaDelGrupo(unittest.TestCase):
-    
+
     def test_lista_en_orden_alfabetico(self):
         alumnos = ["Luis Pérez", "ana López", "Carla Ruiz"]
         self.assertEqual(lista_ordenada(alumnos), ["ana López", "Carla Ruiz", "Luis Pérez"])
-        
+
     def test_lista_original_no_cambia(self):
         alumnos = ["Luis Pérez", "Ana López"]
         lista_ordenada(alumnos)
         self.assertEqual(alumnos, ["Luis Pérez", "Ana López"])
-        
+
     def test_linea_de_la_lista(self):
         self.assertEqual(linea_lista(1, "Ana López"), "1. Ana López")
 
 
 class HU06ConsultarAlumno(unittest.TestCase):
-    
+
     def test_buscar_sin_importar_mayusculas(self):
         alumnos = ["Ana López", "Luis Pérez"]
         self.assertEqual(buscar_alumno(alumnos, " luis pérez "), "Luis Pérez")
-        
+
     def test_buscar_alumno_que_no_existe(self):
         self.assertIsNone(buscar_alumno(["Ana López"], "Pedro"))
-
 if __name__ == "__main__":
     unittest.main(verbosity=2)
