@@ -17,7 +17,8 @@
 from calificaciones import (LIMITE_ALUMNOS, registrar_alumno, nombre_repetido,
                             validar_calificacion,
                             calcular_promedio, obtener_estatus, fila_reporte,
-                            promedio_grupal, lista_ordenada, linea_lista)
+                            promedio_grupal, lista_ordenada, linea_lista,
+                            buscar_alumno)
 
 NOMBRE_APP = "CalifiApp"
 OBJETIVO = "Registrar y consultar las calificaciones de un grupo desde la consola"
@@ -114,6 +115,29 @@ def opcion_lista():
     print("Total:", len(alumnos), "de", LIMITE_ALUMNOS, "alumnos")
 
 
+# HU-06 Consultar a un alumno
+def opcion_consultar():
+    if len(alumnos) == 0:
+        print("\nAún no hay alumnos registrados (opción 1).")
+        return
+    texto = input("\nNombre del alumno a consultar: ")
+    nombre = buscar_alumno(alumnos, texto)
+    if nombre is None:
+        print(" No encontré a", texto.strip(), "en el grupo. Revisa la lista (opción 5).")
+        return
+    print("\nCONSULTA DE", nombre)
+    if nombre not in calificaciones:
+        print(" Aún no tiene calificaciones (opción 2).")
+        return
+    parciales = calificaciones[nombre]
+    numero = 1
+    for calificacion in parciales:
+        print(" Parcial " + str(numero) + ": " + str(calificacion))
+        numero = numero + 1
+    promedio = calcular_promedio(parciales)
+    print(" Promedio:", promedio, obtener_estatus(promedio))
+
+
 # ==============================================================
 #  Menú principal
 # ==============================================================
@@ -129,6 +153,7 @@ def main():
         print("  3. Calcular promedio y estatus   (HU-03)")
         print("  4. Mostrar reporte del grupo     (HU-04)")
         print("  5. Ver lista del grupo           (HU-05)")
+        print("  6. Consultar a un alumno         (HU-06)")
         print("  0. Salir")
         print("-" * 50)
 
@@ -144,10 +169,12 @@ def main():
             opcion_reporte()
         elif opcion == "5":
             opcion_lista()
+        elif opcion == "6":
+            opcion_consultar()
         elif opcion == "0":
             print("Gracias por usar " + NOMBRE_APP + ". ¡Hasta pronto!")
         else:
-            print("\nOpción no válida. Escribe un número del 0 al 5.")
+            print("\nOpción no válida. Escribe un número del 0 al 6.")
 
         if opcion != "0":
             input("\nPresiona ENTER para volver al menú...")
