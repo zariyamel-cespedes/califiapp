@@ -89,5 +89,14 @@ class HU05ListaDelGrupo(unittest.TestCase):
         self.assertEqual(linea_lista(1, "Ana López"), "1. Ana López")
 
 
+class HU06ConsultarAlumno(unittest.TestCase):
+    
+    def test_buscar_sin_importar_mayusculas(self):
+        alumnos = ["Ana López", "Luis Pérez"]
+        self.assertEqual(buscar_alumno(alumnos, " luis pérez "), "Luis Pérez")
+        
+    def test_buscar_alumno_que_no_existe(self):
+        self.assertIsNone(buscar_alumno(["Ana López"], "Pedro"))
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

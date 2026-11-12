@@ -7,11 +7,7 @@ MINIMA_APROBATORIA = 6
 
 # HU-01 Registrar alumnos
 def nombre_repetido(alumnos, nombre):
-    nombre = nombre.strip().lower()
-    for registrado in alumnos:
-        if registrado.lower() == nombre:
-            return True
-    return False
+    return buscar_alumno(alumnos, nombre) is not None
 
 def registrar_alumno(alumnos, nombre):
     nombre = nombre.strip()
@@ -63,3 +59,12 @@ def lista_ordenada(alumnos):
 
 def linea_lista(numero, nombre):
     return str(numero) + ". " + nombre
+
+
+# HU-06 Consultar a un alumno
+def buscar_alumno(alumnos, nombre):
+    nombre = nombre.strip().lower()
+    for registrado in alumnos:
+        if registrado.lower() == nombre:
+            return registrado
+    return None
